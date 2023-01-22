@@ -12,7 +12,7 @@ RUN chown $USER:$USER $BOT
 USER $USER
 WORKDIR $BOT
 
-
+RUN pip install python-dev-tools --user
 COPY requirements.txt requirements.txt
 RUN pip install --user --no-cache-dir -r requirements.txt
 
