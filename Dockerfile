@@ -1,4 +1,4 @@
-FROM python:3-slim-buster
+FROM python:3.10-slim-buster
 
 RUN pip install --upgrade pip
 
@@ -12,7 +12,6 @@ RUN chown $USER:$USER $BOT
 USER $USER
 WORKDIR $BOT
 
-RUN pip install wheel --user
 COPY requirements.txt requirements.txt
 RUN pip install --user --no-cache-dir -r requirements.txt
 
